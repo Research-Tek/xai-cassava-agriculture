@@ -12,20 +12,24 @@ Food security is currently a major concern due to the growing global population,
 ### Softwares
 |Libraries|Version|  
 |---|---| 
-|Python |3.10|    
-|Docker|20.x| 
-|Owlready2|0.3| 
-|Fastapi|0.3|
-|Bentoml|0.3|
-|Tensorflow|2|
+|[Python](https://www.python.org) |3.10|    
+|[Docker](https://www.docker.com)|20.x| 
+|[Flake8](https://flake8.pycqa.org/en/latest/index.html)|4.0.1| 
+|[FastAPI](https://fastapi.tiangolo.com)|0.75.1|
+|[Owlready2](https://owlready2.readthedocs.io/en/v0.37/)|0.37|
+|[Tensorflow](https://www.tensorflow.org)|2.x|
+|[BentoML](https://docs.bentoml.org/en/latest/)|1.0.0a7|
+|[Build](https://pypa-build.readthedocs.io/en/latest/)|0.7.0|
+|[Pandas](https://pandas.pydata.org)|1.4.2|
+|[Tqdm](https://tqdm.github.io)|4.64.0|
 
 # Build 
 
 Use `make` to build the docker-containers for the ontology service and the decision engine:
 
 ```bash
-pipenv shell
-make docker-build
+  pipenv shell
+  make docker-build
 ```
 
 
