@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#"
+     xml:base="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease">
+        <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#enabledByCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#enabledByCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#enablesDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#enablesDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#enablesDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isConditionOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Plant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasPlant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasPlant">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isPlantedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Soil"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Plant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasSoil -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasSoil">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isPartOfField"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Field"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Soil"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasSymptoms -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasSymptoms">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isCausedByDisease"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseSymptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#infectedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#infectedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#infects"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Plant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#infects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#infects">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Plant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isCausedByDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isCausedByDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseSymptom"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isConditionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isConditionOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Plant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isPartOfField -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isPartOfField">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Soil"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Field"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isPlantedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#isPlantedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Plant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Soil"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasRainySeason -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#hasRainySeason">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Field"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#BacterialPlantDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#BacterialPlantDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBCondition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDCondition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMCondition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDCondition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseCondition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseSymptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseSymptom"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Field -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Field"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#FungalPlantDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#FungalPlantDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#HighSoilMoistureObservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#HighSoilMoistureObservation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Observation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilMoisture"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#LowSoilMoistureObservation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#MediumSoilMoistureObservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#LowSoilMoistureObservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#LowSoilMoistureObservation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Observation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilMoisture"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#MediumSoilMoistureObservation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#MediumSoilMoistureObservation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#MediumSoilMoistureObservation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Observation"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilMoisture"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</xsd:maxExclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:intersectionOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Plant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Plant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Soil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Soil"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#ViralPlantDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#ViralPlantDisease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#PlantDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBRainySeason -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBRainySeason">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBacterialBlight"/>
+        <skos:definition xml:lang="en">The disease is more devastating during the rainy season.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBSoilMoisture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBSoilMoisture">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBacterialBlight"/>
+        <skos:definition xml:lang="en">The disease grows in moist soil and can withstand dry soil to an extend.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBSoilPH -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBSoilPH">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBacterialBlight"/>
+        <skos:definition xml:lang="en">Soil pH of 6.5 to 7.2 enables the disease.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBSoilTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBSoilTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBacterialBlight"/>
+        <skos:definition xml:lang="en">Soil temperature of 25 ⁰C to 30 ⁰C enables the disease.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBVisualSymptoms -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBBVisualSymptoms">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseSymptom"/>
+        <isCausedByDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBacterialBlight"/>
+        <skos:definition xml:lang="en">The disease usually causes the following visual symptoms: wilting, die-back, angular necrotic spotting.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDRelativeHumidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDRelativeHumidity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBrownStreakDisease"/>
+        <skos:definition xml:lang="en">A relative air humidity of 70% to 85% enables the disease vector.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDSoilMoisture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDSoilMoisture">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBrownStreakDisease"/>
+        <skos:definition xml:lang="en">The disease can thrive in both wet and dry soil.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDSoilTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDSoilTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBrownStreakDisease"/>
+        <skos:definition xml:lang="en">Soil temperature of 10 ⁰C to 32 ⁰C enables the disease.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDVisualSymptoms -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CBSDVisualSymptoms">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseSymptom"/>
+        <isCausedByDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBrownStreakDisease"/>
+        <skos:definition xml:lang="en">The disease usually causes the following visual symptoms: severe foliar chlorosis and necrosis, root rot, brown streaks on stems, tuber lesion.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMRelativeHumidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMRelativeHumidity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaGreenMottle"/>
+        <skos:definition xml:lang="en">A relative air humidity of 70% and above enables the disease vector.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMSoilMoisture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMSoilMoisture">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaGreenMottle"/>
+        <skos:definition xml:lang="en">The disease thrives in very moist soil.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMSoilTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMSoilTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaGreenMottle"/>
+        <skos:definition xml:lang="en">Soil temperature of 27°C and above enables the disease.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMVisualSymptoms -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CGMVisualSymptoms">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseSymptom"/>
+        <isCausedByDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaGreenMottle"/>
+        <skos:definition xml:lang="en">The disease usually causes the following visual symptoms: young leaves being puckered with distinct yellow spots, green pattern (mosaic), twisted margins.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDHighRainfall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDHighRainfall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaMosaicDisease"/>
+        <skos:definition xml:lang="en">High rainfall enables the disease vector.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDSoilMoisture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDSoilMoisture">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaMosaicDisease"/>
+        <skos:definition xml:lang="en">The disease able to adapt to different soil moisture levels.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDSoilTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDSoilTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaMosaicDisease"/>
+        <skos:definition xml:lang="en">Soil temperature of 20 ⁰C to 32 ⁰C enables the disease.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDTemperature">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDCondition"/>
+        <enablesDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaMosaicDisease"/>
+        <skos:definition xml:lang="en">High temperature enables the disease vector whitefly to thrive in the environment.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDVisualSymptoms -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CMDVisualSymptoms">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#DiseaseSymptom"/>
+        <isCausedByDisease rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaMosaicDisease"/>
+        <skos:definition xml:lang="en">The disease usually causes the following visual symptoms: mosaic, mottling, twisted leaflet, reduction in size of leaves and plants.</skos:definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBacterialBlight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBacterialBlight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#BacterialPlantDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBrownStreakDisease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaBrownStreakDisease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#ViralPlantDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaGreenMottle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaGreenMottle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#ViralPlantDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaMosaicDisease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#CassavaMosaicDisease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#ViralPlantDisease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#RelativeHumidity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#RelativeHumidity">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilMoisture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilMoisture">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilPH -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilPH">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilTemperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#SoilTemperature">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Temperature -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armin/ontologies/2022/2/cassava-disease#Temperature">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

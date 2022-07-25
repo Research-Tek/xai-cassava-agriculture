@@ -1,0 +1,18 @@
+# training data
+data
+
+# python venv
+bin
+lib64
+lib
+include
+etc
+share
+pyvenv.cfg
+
+**/__pycache__/
+**/dist
+**/*.egg-info/
+
+# IDE
+.idea

@@ -1,0 +1,2 @@
+include ontology_service/owl/cassava-disease.owl owl/cassava-disease.owl
+include ontology_service/owl/sosa.owl owl/sosa.owl

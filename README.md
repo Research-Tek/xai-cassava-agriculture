@@ -19,3 +19,13 @@ Food security is currently a major concern due to the growing global population,
 |Bentoml|0.3|
 |Tensorflow|2|
 
+# Build 
+
+Use `make` to build the docker-containers for the ontology service and the decision engine:
+
+```bash
+pipenv shell
+make docker-build
+```
+
+
