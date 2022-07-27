@@ -13,7 +13,7 @@ Food security is currently a major concern due to the growing global population,
 |Libraries|Version|  
 |---|---| 
 |[Python](https://www.python.org) |3.10|    
-|[Docker](https://www.docker.com)|20.x| 
+|[Docker](https://www.docker.com)|20.10| 
 |[Flake8](https://flake8.pycqa.org/en/latest/index.html)|4.0.1| 
 |[FastAPI](https://fastapi.tiangolo.com)|0.75.1|
 |[Owlready2](https://owlready2.readthedocs.io/en/v0.37/)|0.37|
