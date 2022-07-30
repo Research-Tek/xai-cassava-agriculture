@@ -23,6 +23,12 @@ Food security is currently a major concern due to the growing global population,
 |[Pandas](https://pandas.pydata.org)|1.4.2|
 |[Tqdm](https://tqdm.github.io)|4.64.0|
 
+# System (Training & Testing)
+
+|Node Type|  Nodes | Cores/Node |  memory/Node |GPUs|
+|-----|---------|-------|------------|--------------|
+|GPU  |1     | 28 × Skylake     | 384 GB     |4 × Nvidia Tesla V100 |
+
 # Build 
 
 Use `make` to build the docker-containers for the ontology service and the decision engine:
