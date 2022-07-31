@@ -79,12 +79,12 @@ async def get_ontology_disease_vector(plant_id):
     end_time = time.time()
     return r.json(), end_time - start_time
 
+
 def majority_vote(image_vector, ontology_vector):
     diseases = ontology_vector.keys()
     image_probs = [image_vector[disease] for disease in diseases]
     ontology_probs = [ontology_vector[disease] for disease in diseases]
 
-    prediction = np.average([image_probs, ontology_probs], axis=0, weights=[1.0, 1.2])
+    prediction = np.average([image_probs, ontology_probs], axis=0, weights=[0.5, 0.5])
 
     return list(diseases)[np.argmax(prediction)]
-

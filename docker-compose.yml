@@ -11,12 +11,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - CLASSIFIER_SERVICE_URL=http://electricsheep:3000
+      - CLASSIFIER_SERVICE_URL=http://gpu-node:3000
       - ONTOLOGY_SERVICE_URL=http://ontology:8000
-  node-red-flow:
-    image: docker.uibk.ac.at:443/csaw4226/sakd/node-red:latest
-    ports:
-      - "1880:1880"
 
 
 
