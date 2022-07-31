@@ -12,6 +12,10 @@ bentoml = "==1.0.0a7"
 build = "==0.7.0"
 pandas = "==1.4.2"
 tqdm = "==4.64.0"
+torch = "==1.12.0"
+scikit-learn = "==1.1.1"
+matplotlib = "==3.5.2"
+seaborn = "==0.12.0b2"
 
 [dev-packages]
 
