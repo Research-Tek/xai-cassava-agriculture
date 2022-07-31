@@ -1,1 +1,2 @@
+*.pth filter=lfs diff=lfs merge=lfs -text
 /vision/volo_d2_384_fold0_best.pth filter=lfs diff=lfs merge=lfs -text
