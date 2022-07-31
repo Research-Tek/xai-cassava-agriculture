@@ -23,6 +23,7 @@ Food security is currently a major concern due to the growing global population,
 |[Pandas](https://pandas.pydata.org)|1.4.2|
 |[Tqdm](https://tqdm.github.io)|4.64.0|
 
+## Build 
 # System (Training & Testing)
 
 |Node Type|  Nodes | Cores/Node |  memory/Node |GPUs|
@@ -37,5 +38,34 @@ Use `make` to build the docker-containers for the ontology service and the decis
   pipenv shell
   make docker-build
 ```
+
+You can load the provided checkpoint for our best training result as a bentoml model:
+
+```bash
+cd vision
+python3 checkpoint_to_bento_model.py
+```
+
+## Run
+
+In order to run the complete application you will need to start the image classifier 
+on a gpu enabled node with bentoml:
+
+```bash
+cd vision
+bentoml serve ./service.py:svc --host 0.0.0.0
+```
+
+Make sure to correctly configure the service hostnames and image tags in `docker-compose.yml` 
+and run the decision engine and ontology service with:
+
+```
+docker-compose up
+```
+
+## Training
+
+To train the image classifier yourself download the [dataset](https://www.kaggle.com/datasets/tahsin/cassava-leaf-disease-merged) and 
+follow the script `vision/training.py`.
 
 
