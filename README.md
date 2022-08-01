@@ -42,7 +42,7 @@ Use `make` to build the docker-containers for the ontology service and the decis
 You can load the provided checkpoint for our best training result as a bentoml model:
 
 ```bash
-cd vision
+cd vision-model
 python3 checkpoint_to_bento_model.py
 ```
 
@@ -52,7 +52,7 @@ In order to run the complete application you will need to start the image classi
 on a gpu enabled node with bentoml:
 
 ```bash
-cd vision
+cd vision-model
 bentoml serve ./service.py:svc --host 0.0.0.0
 ```
 
