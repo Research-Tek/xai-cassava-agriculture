@@ -10,9 +10,6 @@
 
 # # Data Loading
 
-# In[49]:
-
-
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0' # specify GPUs locally
 
@@ -20,29 +17,11 @@ import pandas as pd
 
 import seaborn as sns
 
-
-# In[50]:
-
-
-
-
-# In[51]:
 DATASET_PATH = "path/to/dataset"
 
 train = pd.read_csv(f'{DATASET_PATH}/merged.csv')
 label_map = pd.read_json(f'{DATASET_PATH}/label_num_to_disease_map.json',
                          orient='index')
-
-
-# In[52]:
-
-
-
-
-# # Directory settings
-
-# In[53]:
-
 
 # ====================================================
 # Directory settings
@@ -57,13 +36,8 @@ TRAIN_PATH = f'{DATASET_PATH}/train/'
 TEST_PATH = '../input/cassava-leaf-disease-classification/test_images'
 
 
-# # CFG
-
-# In[54]:
-
-
 # ====================================================
-# CFG
+# Model CFG
 # ====================================================
 class CFG:
     debug=False
@@ -104,11 +78,6 @@ class CFG:
 if CFG.debug:
     CFG.epochs = 1
     train = train.sample(n=1000, random_state=CFG.seed).reset_index(drop=True)
-
-
-# # Library
-
-# In[55]:
 
 
 # ====================================================
@@ -165,10 +134,6 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(device)
 
 
-# # Utils
-
-# In[56]:
-
 
 # ====================================================
 # Utils
@@ -211,11 +176,6 @@ def seed_torch(seed=42):
 seed_torch(seed=CFG.seed)
 
 
-# # CV split
-
-# In[57]:
-
-
 folds = train.copy()
 Fold = StratifiedKFold(n_splits=CFG.n_fold, shuffle=True, random_state=CFG.seed)
 for n, (train_index, val_index) in enumerate(Fold.split(folds, folds[CFG.target_col])):
@@ -227,15 +187,6 @@ print(folds.groupby(['fold', CFG.target_col]).size())
 for i in CFG.trn_fold:
     folds[folds['fold'] == i].to_csv(f"fold_{i}.csv")
 
-# In[58]:
-
-
-len(train)
-
-
-# # Dataset
-
-# In[59]:
 
 
 # ====================================================
@@ -283,16 +234,7 @@ class TestDataset(Dataset):
         return image
 
 
-# In[60]:
-
-
 train_dataset = TrainDataset(train, transform=None)
-
-
-
-# # Transforms
-
-# In[61]:
 
 
 # ====================================================
@@ -326,14 +268,9 @@ def get_transforms(*, data):
         ])
 
 
-# In[62]:
 
 
 train_dataset = TrainDataset(train, transform=get_transforms(data='train'))
-
-
-
-# In[63]:
 
 
 # ====================================================
@@ -372,12 +309,6 @@ class CustomVolo(nn.Module):
         x = self.model(x)
         return x
 
-
-# In[64]:
-
-
-#model = CustomEfficientNet(model_name=CFG.model_name, pretrained=False)
-#model = CustomResNext(model_name=CFG.model_name, pretrained=False)
 model = CustomVolo(model_name=CFG.model_name, pretrained=False)
 train_dataset = TrainDataset(train, transform=get_transforms(data='train'))
 train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True,
@@ -389,16 +320,6 @@ for image, label in train_loader:
     break
 
 
-# # Criterion
-
-# ## Label Smoothing
-
-# In[65]:
-
-
-# ====================================================
-# Label Smoothing
-# ====================================================
 class LabelSmoothingLoss(nn.Module): 
     def __init__(self, classes=5, smoothing=0.0, dim=-1): 
         super(LabelSmoothingLoss, self).__init__() 
@@ -414,10 +335,6 @@ class LabelSmoothingLoss(nn.Module):
             true_dist.scatter_(1, target.data.unsqueeze(1), self.confidence) 
         return torch.mean(torch.sum(-true_dist * pred, dim=self.dim))
 
-
-# ## Focal Loss
-
-# In[66]:
 
 
 class FocalLoss(nn.Module):
@@ -467,10 +384,6 @@ class FocalCosineLoss(nn.Module):
         return cosine_loss + self.xent * focal_loss
 
 
-# ## SymmetricCrossEntropy
-
-# In[68]:
-
 
 class SymmetricCrossEntropy(nn.Module):
 
@@ -490,10 +403,6 @@ class SymmetricCrossEntropy(nn.Module):
             rce_loss = rce_loss.sum()
         return self.alpha * ce_loss + self.beta * rce_loss
 
-
-# # Bi-Tempered-Loss
-
-# In[69]:
 
 
 def log_t(u, t):
@@ -751,11 +660,6 @@ class BiTemperedLogisticLoss(nn.Module):
         return loss_label
 
 
-# ## TaylorCrossEntropyLoss
-
-# In[71]:
-
-
 class TaylorSoftmax(nn.Module):
     '''
     This is the autograd version
@@ -793,15 +697,8 @@ class TaylorCrossEntropyLoss(nn.Module):
 
     def forward(self, logits, labels):
         log_probs = self.taylor_softmax(logits).log()
-        #loss = F.nll_loss(log_probs, labels, reduction=self.reduction,
-        #        ignore_index=self.ignore_index)
         loss = self.lab_smooth(log_probs, labels)
         return loss
-
-
-# # Helper functions
-
-# In[72]:
 
 
 # ====================================================
@@ -948,7 +845,6 @@ def valid_fn(valid_loader, model, criterion, device):
 
 def inference(model, states, test_loader, device):
     model.to(device)
-    #tk0 = tqdm(enumerate(test_loader), total=len(test_loader))
     probs = []
     for i, (images) in tk0:
         images = images.to(device)
@@ -964,10 +860,6 @@ def inference(model, states, test_loader, device):
     probs = np.concatenate(probs)
     return probs
 
-
-# # Train loop
-
-# In[73]:
 
 
 # ====================================================
@@ -1103,8 +995,6 @@ def train_loop(folds, fold):
     return valid_folds
 
 
-# In[74]:
-
 
 # ====================================================
 # main
@@ -1132,14 +1022,10 @@ def main():
         oof_df.to_csv(OUTPUT_DIR+'oof_df.csv', index=False)
 
 
-# In[75]:
-
-
 if __name__ == '__main__':
     main()
 
 
-# In[ ]:
 
 
 
