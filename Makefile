@@ -7,4 +7,4 @@ ontology-service:
 decision-engine:
 	cd decision-engine && python3 -m build && docker build -t ontology-service .
 
-docker-build: ontology-service decision-engine
+docker-build: decision-engine decision-engine
