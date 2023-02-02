@@ -1,14 +1,9 @@
-# Towards an Explainable Artificial Intelligence Using Deep Learning and Knowledge Graphs: A Study on Cassava Disease
+<img width="1137" alt="image" src="https://user-images.githubusercontent.com/52251022/216262196-d2a65f94-f816-467c-ad02-2e218ff3b883.png">
+
 ### Abstract 
 Food security is currently a major concern due to the growing global population, the exponential increase in food demand, the deterioration of soil quality, the occurrence of numerous diseases, and the effects of climate change on crop yield. Sustainable agriculture is necessary to solve this food security issue. Disruptive technologies, such as artificial intelligence, especially, deep learning (DL) techniques can contribute to agricultural sustainability. For example, applying DL techniques for early disease classification allows us to take timely action, thereby helping to increase the yield without inflicting unnecessary environmental damage, such as excessive use of fertilisers or pesticides. Several studies have been conducted on agricultural sustainability using DL techniques and also semantic web technologies such as ontologies and knowledge graphs (KGs). However, the three major challenges remain: (i) the lack of explainability of DL-based systems (e.g. disease information), especially to non-experts like farmers; (ii) a lack of contextual information (e.g. soil or plant information) and domain-expert knowledge in DL-based systems; and (iii) the lack of pattern learning ability of systems based on the semantic web, despite their ability to incorporate domain knowledge. Therefore, we present our work on disease classification, addressing the challenges as mentioned earlier by combining DL and semantic web technologies, namely ontologies and KGs. The experimental outcome of our work demonstrates that the proposed method, which incorporates contextual information and domain knowledge using KGs when combined with DL, is advantageous in terms of performance compared to the state-of-the-art and also in terms of explainability.
 
-### Authors
-- Tek Raj Chhetri
-- Armin Hohenegger
-- Anna Fensel
-- Kasali Mariam Aramide
-- Asiru Afeez Adekunle
-
+ 
 ### Softwares
 |Libraries|Version|  
 |---|---| 
