@@ -1,4 +1,4 @@
-# Survey
+# Survey Questions
 ## Q1. How old are you? 
  - Under 18
  - 18-24
