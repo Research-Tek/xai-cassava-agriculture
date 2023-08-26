@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/52251022/233434198-54d7e335-6c33-4385-89ed-03d3ff0c406e.png)
+<img width="1316" alt="image" src="https://github.com/Research-Tek/xai-cassava-agriculture/assets/52251022/97138283-9384-40ba-b835-09601b766f82">
 
 ### Cite
 ```
